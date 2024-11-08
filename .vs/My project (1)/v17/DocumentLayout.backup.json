@@ -3,11 +3,11 @@
   "WorkspaceRootPath": "C:\\Users\\koukaa\\Desktop\\Unity\\My project (1)\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E1CE1FEE-67BE-6533-73AA-CC578BE80DCD}|Assembly-CSharp.csproj|c:\\users\\koukaa\\desktop\\unity\\my project (1)\\assets\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E1CE1FEE-67BE-6533-73AA-CC578BE80DCD}|Assembly-CSharp.csproj|C:\\Users\\koukaa\\Desktop\\Unity\\My project (1)\\assets\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E1CE1FEE-67BE-6533-73AA-CC578BE80DCD}|Assembly-CSharp.csproj|solutionrelative:assets\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E1CE1FEE-67BE-6533-73AA-CC578BE80DCD}|Assembly-CSharp.csproj|C:\\Users\\koukaa\\Desktop\\Unity\\My project (1)\\assets\\enemymovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E1CE1FEE-67BE-6533-73AA-CC578BE80DCD}|Assembly-CSharp.csproj|c:\\users\\koukaa\\desktop\\unity\\my project (1)\\assets\\enemymovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E1CE1FEE-67BE-6533-73AA-CC578BE80DCD}|Assembly-CSharp.csproj|solutionrelative:assets\\enemymovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -36,7 +36,7 @@
               "RelativeDocumentMoniker": "Assets\\EnemyMovement.cs",
               "ToolTip": "C:\\Users\\koukaa\\Desktop\\Unity\\My project (1)\\Assets\\EnemyMovement.cs",
               "RelativeToolTip": "Assets\\EnemyMovement.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAwwBkAAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAYwBQAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-14T14:27:16.343Z",
               "EditorCaption": ""
@@ -63,8 +63,7 @@
               "RelativeToolTip": "Assets\\CameraController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T08:46:12.865Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-14T08:46:12.865Z"
             },
             {
               "$type": "Document",
@@ -74,7 +73,7 @@
               "RelativeDocumentMoniker": "Assets\\playerController.cs",
               "ToolTip": "C:\\Users\\koukaa\\Desktop\\Unity\\My project (1)\\Assets\\playerController.cs",
               "RelativeToolTip": "Assets\\playerController.cs",
-              "ViewState": "AgIAADMAAAAAAAAAAAAowEQAAAA7AAAAAAAAAA==",
+              "ViewState": "AgIAAHEAAAAAAAAAAAA7wG8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-13T12:53:54.922Z",
               "EditorCaption": ""

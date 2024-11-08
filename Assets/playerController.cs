@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class PlayerController : MonoBehaviour
@@ -16,33 +17,36 @@ public class PlayerController : MonoBehaviour
 
     // Threshold for when the player falls off the board
     public float fallThreshold = -10.0f;
+    private bool isGameOver = false;
 
-    // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         count = 0;
-        setCountText();
+        SetCountText();
         winTextObject.SetActive(false);
     }
 
-    // FixedUpdate is called at a fixed interval
     private void FixedUpdate()
     {
-        Vector3 movement = new Vector3(movementX, 0.0f, movementY);
-        rb.AddForce(movement * speed);
+        if (!isGameOver)
+        {
+            Vector3 movement = new Vector3(movementX, 0.0f, movementY);
+            rb.AddForce(movement * speed);
+        }
     }
 
-    // Update is called once per frame
     void Update()
     {
-        movementX = Input.GetAxis("Horizontal"); // Using old input system
-        movementY = Input.GetAxis("Vertical");   // Using old input system
+        if (!isGameOver)
+        {
+            movementX = Input.GetAxis("Horizontal");
+            movementY = Input.GetAxis("Vertical");
 
-        CheckForFall();
+            CheckForFall();
+        }
     }
 
-    // This method handles player movement using the new input system
     void OnMove(InputValue movementValue)
     {
         Vector2 movementVector = movementValue.Get<Vector2>();
@@ -50,7 +54,6 @@ public class PlayerController : MonoBehaviour
         movementY = movementVector.y;
     }
 
-    // Check if the player falls below the fall threshold
     void CheckForFall()
     {
         if (transform.position.y < fallThreshold)
@@ -59,8 +62,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // Set the count text
-    void setCountText()
+    void SetCountText()
     {
         countText.text = "Count : " + count.ToString();
         if (count >= 12)
@@ -70,33 +72,50 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // Triggered when player collides with a collectible
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Collectible"))
         {
             other.gameObject.SetActive(false);
             count++;
-            setCountText();
+            SetCountText();
         }
     }
 
-    // Triggered when player collides with an enemy
     private void OnCollisionEnter(Collision collision)
     {
+        Debug.Log("u lose");
         if (collision.gameObject.CompareTag("Enemy"))
         {
+            
+
             LoseGame();
         }
     }
 
-    // Method to handle the lose condition
     void LoseGame()
     {
-        // Destroy the current object (player)
-        Destroy(gameObject);
-        // Update the winText to display "You Lose!"
-        winTextObject.gameObject.SetActive(true);
-        winTextObject.GetComponent<TextMeshProUGUI>().text = "You Lose!";
+        if (isGameOver) return;
+        isGameOver = true;
+
+        rb.velocity = Vector3.zero;
+        rb.isKinematic = true;
+        GetComponent<Renderer>().enabled = false;
+        GetComponent<Collider>().enabled = false;
+
+        // Set the "You Lose" message to red and activate it
+        winTextObject.SetActive(true);
+        TextMeshProUGUI winText = winTextObject.GetComponent<TextMeshProUGUI>();
+        winText.text = "You Lose!";
+        winText.color = Color.red;
+
+        // Restart the game after a short delay
+        Invoke("RestartGame", 2f);
+    }
+
+
+    void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
